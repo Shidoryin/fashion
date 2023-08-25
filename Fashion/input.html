@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Splash</title>
+</head>
+
+<body>
+
+    <div style="padding: 50px;">
+        <input type="text" name="search" onkeyup="search()" placeholder="Search" id="search-icon"
+            style="padding: 10px 20px 10px 20px; margin-bottom: 20px;">
+        <img src="home/Vector copy 3.png" alt="search-icon" class="svg">
+        <ol class="search-list">
+            <li class="items">Facebook</li>
+            <li class="items"> instagram</li>
+            <li class="items"> whatsapp</li>
+            <li class="items"> location</li>
+            <li class="items"> users</li>
+            <li class="items"> reviews</li>
+            <li class="items"> orders</li>
+        </ol>
+
+    </div>
+
+    <script>
+        function search() {
+            let input = document.getElementById("search-icon").value
+            input = input.toLowerCase();
+            let x = document.getElementsByClassName("items");
+
+            for (let i = 0; i < x.length; i++) {
+                if (!x[i].innerHTML.toLowerCase().includes(input)) {
+                    x[i].style.display = "none";
+                }
+                else {
+                    x[i].style.display = "list-item"
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
